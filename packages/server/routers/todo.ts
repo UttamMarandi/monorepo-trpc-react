@@ -3,7 +3,23 @@ import { z } from "zod";
 import { todoSchema, TodoType } from "../models/todo";
 import { TRPCError } from "@trpc/server";
 
-let todos: TodoType[] = [];
+let todos: TodoType[] = [
+  {
+    id: 1,
+    title: "First todo",
+    completed: false,
+  },
+  {
+    id: 2,
+    title: "Second todo",
+    completed: false,
+  },
+  {
+    id: 3,
+    title: "third todo",
+    completed: false,
+  },
+];
 
 export const todoRouter = t.router({
   all: t.procedure.query(() => {
